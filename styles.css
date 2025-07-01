@@ -292,3 +292,42 @@ main {
     text-decoration: underline;
 }
 
+
+/* Loading spinner container */
+.loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    min-height: 40px;
+}
+
+/* Spinner image */
+.spinner-image {
+    width: 30px;
+    height: 30px;
+}
+
+/* Style for the typing text */
+.typing-text {
+    display: inline;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Message link styling */
+.message-link {
+    margin-top: 8px;
+}
+
+.message-link a {
+    color: #2a419d;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.message-link a:hover {
+    text-decoration: underline;
+}

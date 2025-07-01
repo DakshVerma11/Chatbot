@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
     
+    // Typing speed (milliseconds per character)
+    const typingSpeed = 20;
+    
     // Try to load responses from JSON file
     loadResponses();
     
@@ -201,14 +204,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Convert to lowercase for case-insensitive matching
         const lowerMessage = message.toLowerCase();
         
+        // Show loading spinner
+        showLoadingSpinner();
+        
         // Check for matches in the responses database
         for (const item of responses) {
             for (const keyword of item.keywords) {
                 if (lowerMessage.includes(keyword.toLowerCase())) {
                     // Add bot response with delay to simulate thinking
                     setTimeout(() => {
+                        hideLoadingSpinner();
                         addBotMessage(item.response, item.link);
-                    }, 800);
+                    }, 1000);
                     return;
                 }
             }
@@ -216,8 +223,37 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Default response if no match found
         setTimeout(() => {
+            hideLoadingSpinner();
             addBotMessage("I am sorry, I can't reply to that.");
-        }, 800);
+        }, 1000);
+    }
+
+    // Show loading spinner
+    function showLoadingSpinner() {
+        if (!messageContainer) return;
+        
+        const loaderElement = document.createElement('div');
+        loaderElement.classList.add('message', 'bot-message', 'loading-message');
+        loaderElement.id = 'loading-spinner';
+        
+        const spinnerImg = document.createElement('img');
+        spinnerImg.src = '/triangle-spinner.gif';
+        spinnerImg.alt = 'Loading...';
+        spinnerImg.classList.add('spinner-image');
+        
+        loaderElement.appendChild(spinnerImg);
+        messageContainer.appendChild(loaderElement);
+        
+        // Scroll to bottom
+        scrollToBottom();
+    }
+    
+    // Hide loading spinner
+    function hideLoadingSpinner() {
+        const spinner = document.getElementById('loading-spinner');
+        if (spinner) {
+            spinner.remove();
+        }
     }
 
     // Add user message to chat
@@ -244,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollToBottom();
     }
 
-    // Add bot message to chat
+    // Add bot message to chat with typing effect
     function addBotMessage(message, link) {
         if (!messageContainer) return;
         
@@ -253,22 +289,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const messageText = document.createElement('div');
         messageText.classList.add('message-text');
-        messageText.textContent = message;
         
-        // Add link if provided
-        if (link) {
-            const linkElement = document.createElement('div');
-            linkElement.classList.add('message-link');
-            
-            const anchor = document.createElement('a');
-            anchor.href = link.url;
-            anchor.textContent = link.text;
-            anchor.target = "_blank"; // Open in new tab
-            
-            linkElement.appendChild(anchor);
-            messageText.appendChild(document.createElement('br'));
-            messageText.appendChild(linkElement);
-        }
+        // Create a span for the typing text
+        const typingSpan = document.createElement('span');
+        typingSpan.classList.add('typing-text');
+        messageText.appendChild(typingSpan);
         
         const timestamp = document.createElement('div');
         timestamp.classList.add('timestamp');
@@ -281,6 +306,39 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Scroll to bottom
         scrollToBottom();
+        
+        // Type the message character by character
+        let i = 0;
+        function typeCharacter() {
+            if (i < message.length) {
+                typingSpan.textContent += message.charAt(i);
+                i++;
+                scrollToBottom();
+                setTimeout(typeCharacter, typingSpeed);
+            } else {
+                // Add link if provided after typing is complete
+                if (link) {
+                    setTimeout(() => {
+                        const linkElement = document.createElement('div');
+                        linkElement.classList.add('message-link');
+                        
+                        const anchor = document.createElement('a');
+                        anchor.href = link.url;
+                        anchor.textContent = link.text;
+                        anchor.target = "_blank"; // Open in new tab
+                        
+                        linkElement.appendChild(anchor);
+                        messageText.appendChild(document.createElement('br'));
+                        messageText.appendChild(linkElement);
+                        
+                        scrollToBottom();
+                    }, 500); // Slight delay before showing link
+                }
+            }
+        }
+        
+        // Start typing
+        typeCharacter();
     }
 
     // Get current time in format HH:MM AM/PM
