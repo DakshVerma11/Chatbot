@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "keywords": ["hello", "hi", "hey", "howdy", "namaste"],
+    "response": "Hello! How can I help you today?"
+  },
+  {
+    "id": 2,
+    "keywords": ["bye", "goodbye", "see you", "talk later"],
+    "response": "Goodbye! Have a great day!"
+  },
+  {
+    "id": 3,
+    "keywords": ["thank", "thanks"],
+    "response": "You're welcome! Is there anything else I can help you with?"
+  },
+  {
+    "id": 4,
+    "keywords": ["who are you", "what are you", "you", "your name"],
+    "response": "I am DV Assistant, a rule-based chatbot designed to help answer your questions."
+  },
+  {
+    "id": 5,
+    "keywords": ["assist", "help", "support"],
+    "response": "I'm here to help! Please let me know what you need assistance with."
+  },
+  {
+    "id": 6,
+    "keywords": ["capabilities", "features", "what can you do"],
+    "response": "I can answer questions based on keyword matching. Try asking about our services, contact information, or general help topics."
+  },
+  {
+    "id": 7,
+    "keywords": ["contact", "email", "phone", "reach"],
+    "response": "You can contact us at support@dvcompany.com or call us at (123) 456-7890."
+  },
+  {
+    "id": 8,
+    "keywords": ["cost", "fee", "price", "pricing"],
+    "response": "Our pricing varies based on the services you need. Please visit our pricing page or contact our sales team for a custom quote."
+  },
+  {
+    "id": 9,
+    "keywords": ["how are you", "how do you do", "how's it going"],
+    "response": "I'm doing well, thanks for asking! How can I assist you today?"
+  },
+  {
+    "id": 10,
+    "keywords": ["forecast", "rain", "sunny", "temperature", "weather"],
+    "response": "I'm sorry, I don't have access to weather information. You might want to check a weather service for that information."
+  },
+  {
+    "id": 11,
+    "keywords": ["funny", "joke", "laugh"],
+    "response": "Why don't scientists trust atoms? Because they make up everything!"
+  },
+  {
+    "id": 12,
+    "keywords": ["current time", "time", "what time"],
+    "response": "I don't have access to your local time. Your device should show the current time."
+  },
+  {
+    "id": 13,
+    "keywords": ["date", "today's date", "what day"],
+    "response": "I don't have access to the current date. Your device should show today's date."
+  },
+  {
+    "id": 14,
+    "keywords": ["offerings", "services", "what services"],
+    "response": "We offer a wide range of services including web development, app development, and digital marketing solutions."
+  },
+  {
+    "id": 15,
+    "keywords": ["address", "location", "office", "where are you"],
+    "response": "Our main office is located at 123 Main Street, Business District, City."
+  },
+  {
+    "id": 16,
+    "keywords": ["good morning"],
+    "response": "Good morning! How can I help you today?"
+  },
+  {
+    "id": 17,
+    "keywords": ["good afternoon"],
+    "response": "Good afternoon! What can I assist you with?"
+  },
+  {
+    "id": 18,
+    "keywords": ["good evening"],
+    "response": "Good evening! How may I be of service?"
+  },
+  {
+    "id": 19,
+    "keywords": ["are you"],
+    "response": "I'm a simple rule-based chatbot designed to help with basic questions in ChatZero."
+  },
+  {
+    "id": 20,
+    "keywords": ["how do you work"],
+    "response": "I work by matching keywords in your messages to pre-defined responses."
+  },
+  {
+    "id": 21,
+    "keywords": ["created you"],
+    "response": "I was created by the Daksh Verma to assist users with their questions."
+  },
+  {
+    "id": 22,
+    "keywords": ["message"],
+    "response": "You can send messages to your friends by selecting them from the sidebar and typing in the message box."
+  },
+  {
+    "id": 23,
+    "keywords": ["add friend"],
+    "response": "To add a friend, enter their username in the 'Add friend by username' field in the sidebar."
+  },
+  {
+    "id": 24,
+    "keywords": ["logout"],
+    "response": "You can log out by clicking the Logout button in the top right corner of the chat interface."
+  },
+  {
+    "id": 25,
+    "keywords": ["login"],
+    "response": "You can log in with your username/email and password on the login page."
+  },
+  {
+    "id": 26,
+    "keywords": ["register"],
+    "response": "To register, go to the registration page and fill in your details."
+  },
+  {
+    "id": 27,
+    "keywords": ["forgot password"],
+    "response": "If you forgot your password, you can use the 'Forgot password?' link on the login page or email your issue to help@chatzero.com using your registered email."
+  },
+  {
+    "id": 28,
+    "keywords": ["goodbye"],
+    "response": "Goodbye! Feel free to message again if you need assistance."
+  },
+  {
+    "id": 29,
+    "keywords": ["talk later"],
+    "response": "Looking forward to our next chat! Bye for now."
+  },
+  {
+    "id": 30,
+    "keywords": ["goodnight"],
+    "response": "Goodnight! Rest well."
+  },
+  {
+    "id": 31,
+    "keywords": ["exit"],
+    "response": "Closing our conversation. Feel free to message anytime!"
+  },
+  {
+    "id": 32,
+    "keywords": ["thank you"],
+    "response": "You're very welcome! Is there anything else you need?"
+  },
+  {
+    "id": 33,
+    "keywords": ["appreciate"],
+    "response": "I appreciate your kind words! It's my pleasure to assist."
+  },
+  {
+    "id": 34,
+    "keywords": ["helpful"],
+    "response": "I'm glad I could be of help! Let me know if you need anything else."
+  },
+  {
+    "id": 35,
+    "keywords": ["awesome"],
+    "response": "Thank you for the compliment! Is there anything else I can help with?"
+  },
+  {
+    "id": 36,
+    "keywords": ["great"],
+    "response": "Thank you! I aim to provide useful responses."
+  },
+  {
+    "id": 37,
+    "keywords": ["not working"],
+    "response": "I'm sorry to hear that. Could you provide more details about what's not working?"
+  },
+  {
+    "id": 38,
+    "keywords": ["error"],
+    "response": "If you're experiencing an error, try refreshing the page or logging out and back in."
+  },
+  {
+    "id": 39,
+    "keywords": ["bug"],
+    "response": "If you've found a bug, you might want to report it to the ChatZero team at bugs@chatzero.com."
+  },
+  {
+    "id": 40,
+    "keywords": ["issue"],
+    "response": "I'm sorry you're having an issue. Can you describe it in more detail?"
+  },
+  {
+    "id": 41,
+    "keywords": ["wrong"],
+    "response": "I apologize for the misunderstanding. Could you clarify what you mean?"
+  },
+  {
+    "id": 42,
+    "keywords": ["incorrect"],
+    "response": "I'm sorry my response wasn't accurate. Could you tell me more about what you need?"
+  }
+]
