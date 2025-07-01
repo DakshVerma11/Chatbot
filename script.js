@@ -35,6 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
             "id": 3,
             "keywords": ["thank", "thanks"],
             "response": "You're welcome! Is there anything else I can help you with?"
+        },
+        {
+            "id": 6,
+            "keywords": ["rate content", "pricing information", "rate data"],
+            "response": "Rate content is the information about prices or costs that a company collects and stores electronically. This can include things like hourly rates, fees for services, prices per unit, or discounts from suppliers. Companies use this rate content in their electronic systems to help manage purchases, check that invoices match agreed prices, and make sure they pay the right amount. It helps automate and simplify buying and billing processes by having all the pricing details organized and easy to access.",
+            "link": {
+                "text": "Click here for more details",
+                "url": "https://example.com/rate-content-details"
+            }
         }
     ];
     
@@ -181,15 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
         addUserMessage(message);
         
         // Process message and get response
-        const response = processMessage(message);
+        processMessage(message);
         
         // Clear input
         userInput.value = '';
-        
-        // Add bot response with delay to simulate thinking
-        setTimeout(() => {
-            addBotMessage(response);
-        }, 800);
     }
 
     // Process message using keyword matching
@@ -201,13 +205,19 @@ document.addEventListener('DOMContentLoaded', function() {
         for (const item of responses) {
             for (const keyword of item.keywords) {
                 if (lowerMessage.includes(keyword.toLowerCase())) {
-                    return item.response;
+                    // Add bot response with delay to simulate thinking
+                    setTimeout(() => {
+                        addBotMessage(item.response, item.link);
+                    }, 800);
+                    return;
                 }
             }
         }
         
         // Default response if no match found
-        return "I am sorry, I can't reply to that.";
+        setTimeout(() => {
+            addBotMessage("I am sorry, I can't reply to that.");
+        }, 800);
     }
 
     // Add user message to chat
@@ -235,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Add bot message to chat
-    function addBotMessage(message) {
+    function addBotMessage(message, link) {
         if (!messageContainer) return;
         
         const messageElement = document.createElement('div');
@@ -244,6 +254,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const messageText = document.createElement('div');
         messageText.classList.add('message-text');
         messageText.textContent = message;
+        
+        // Add link if provided
+        if (link) {
+            const linkElement = document.createElement('div');
+            linkElement.classList.add('message-link');
+            
+            const anchor = document.createElement('a');
+            anchor.href = link.url;
+            anchor.textContent = link.text;
+            anchor.target = "_blank"; // Open in new tab
+            
+            linkElement.appendChild(anchor);
+            messageText.appendChild(document.createElement('br'));
+            messageText.appendChild(linkElement);
+        }
         
         const timestamp = document.createElement('div');
         timestamp.classList.add('timestamp');
