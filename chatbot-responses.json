@@ -54,6 +54,11 @@
   },
   {
     "id": 10,
+    "keywords": ["hbcd","abcd"],
+    "response": "qwertyuiopasdfghjklzxcvbnm,1234567890!@#$%^&*()_+[]{}|;':\",./<>?`~"
+  },
+  {
+    "id": 11,
     "keywords": ["weather", "forecast", "temperature", "rain", "sunny"],
     "response": "I'm sorry, I don't have access to weather information. You might want to check a weather service for that information."
   }

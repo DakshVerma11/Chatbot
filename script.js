@@ -20,7 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (chatbotLauncher) chatbotLauncher.style.display = 'flex';
     
     // Default responses (fallback if JSON loading fails)
+    /*
+    
     let responses = [
+        
         {
             "id": 1,
             "keywords": ["hello", "hi", "hey", "howdy", "namaste"],
@@ -45,7 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 "url": "https://example.com/rate-content-details"
             }
         }
+            
+        
     ];
+    */
+    let responses = []; // Start with an empty array to hold responses
     
     // Typing speed (milliseconds per character)
     const typingSpeed = 20;
@@ -206,6 +213,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Show loading spinner
         showLoadingSpinner();
+        
+
         
         // Check for matches in the responses database
         for (const item of responses) {
