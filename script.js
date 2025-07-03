@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Show tooltip after responses are loaded (or failed to load)
-                setTimeout(showTooltip, 2000);
+                setTimeout(showTooltip, 1);
             }
         };
         
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             tooltip.classList.remove('hidden');
             setTimeout(() => {
                 tooltip.classList.add('hidden');
-            }, 5000);
+            }, 500000);
         }
     }
 
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     addBotMessage("Hello, I'm DV Assistant. How can I help you today?");
                     firstOpen = false;
-                }, 500);
+                }, 100);
             }
         } else {
             console.error("Could not find chatbot elements");
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(() => {
                         hideLoadingSpinner();
                         addBotMessage(item.response, item.link);
-                    }, 1000);
+                    }, 500);
                     return;
                 }
             }
