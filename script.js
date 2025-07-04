@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to load responses from JSON
     function loadResponses() {
-        // Create XMLHttpRequest (works with file:// protocol, unlike fetch)
         const xhr = new XMLHttpRequest();
         xhr.overrideMimeType("application/json");
         xhr.open('GET', 'chatbot-responses.json', true);
@@ -94,13 +93,10 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send(null);
     }
 
-    // Show tooltip
     function showTooltip() {
         if (tooltip) {
             tooltip.classList.remove('hidden');
-            setTimeout(() => {
-                tooltip.classList.add('hidden');
-            }, 500000);
+            setTimeout(() => { tooltip.classList.add('hidden');}, 5000000);
         }
     }
 
@@ -123,10 +119,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    
     if (closeBtn) {
         closeBtn.addEventListener('click', function(e) {
             console.log("Close clicked");
-            e.stopPropagation(); // Prevent event bubbling
+            e.stopPropagation(); 
             closeChatbot();
         });
     }
